@@ -1,0 +1,33 @@
+<div class="edit">
+  <h1>Set Alarm</h1>
+  <h2>I want to UNLOCK the box</h2>
+  <!-- {FN ? sometime : ""} -->
+  <div class="hidden">
+    <form-wizard>
+      <day-setter
+        setFreq={this.setFreq}
+        setDay={this.setDay}
+        setAll={this.setAll}
+        setDFN={this.setDFN}
+        freq={this.freq}
+        days={this.days}
+        slot="page1"
+        dfn={this.dfn}
+        mode={this.mode}
+      />
+      <time-setter
+        hour={this.hour}
+        min={this.min}
+        hfn={this.hfn}
+        base={this.base}
+        meridian={this.meridian}
+        setMeridian={this.setMeridian}
+        setTime={this.setTime}
+        setHFN={this.setHFN}
+        slot="page2"
+        mode={this.mode}
+      />
+    </form-wizard>
+  </div>
+  <post-button onClick={() => this.submitPayload()}>Save</post-button>
+</div>

@@ -1,0 +1,66 @@
+.diag {
+  display: none;
+  margin-bottom: 60px;
+}
+
+.diag > h1 {
+  font-weight: 100;
+  text-align: center;
+  color: white;
+  margin-top: 60px;
+}
+
+.diag > .inner {
+  border-radius: 8px;
+  background: #eee;
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  color: #444;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.diag > .row {
+  display: grid;
+  grid-template-columns: 35% 65%;
+}
+
+.diag > .row .col:first-of-type {
+  background: #aaa;
+  text-align: right;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.diag .col {
+  padding: 20px;
+}
+
+.diag ol {
+  padding: 0 20px;
+  margin: -6px 0 0 0;
+}
+
+.diag ul {
+  margin: 0;
+  padding: 0;
+}
+
+.diag li {
+  margin-bottom: 8px;
+  padding: 8px 4px;
+  background: #fff;
+}
+
+.diag .col2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.diag p {
+  margin: 0;
+}
+
+.diag p:last-of-type {
+  text-align: right;
+}
