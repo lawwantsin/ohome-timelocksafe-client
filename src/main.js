@@ -19,6 +19,11 @@ export const WEEKDAYS = [
   "Sunday"
 ];
 
+
+const $ = e => document.querySelector(e);
+const $$ = e => Array.from(document.querySelectorAll(e))
+
+
 // const SERVER = LOCAL_JSON_SERVER;
 
 // const tu = (a: any) => {
@@ -140,14 +145,22 @@ export const WEEKDAYS = [
 
 
 
+const router = e => {
+  const path = (history.state && history.state.path) || e
+  console.log(path, history.state, e);
+  $('body').classList.remove("add", "setup", "list", "logs", "diag")
+  if (path.match(/add/)) $('body').classList.add("add")
+  if (path.match(/setup/)) $('body').classList.add("setup")
+  if (path.match(/list/)) $('body').classList.add("list")
+  if (path.match(/logs/)) $('body').classList.add("logs")
+  if (path.match(/diag/)) $('body').classList.add("diag")
+}
 
 (function() {
 
 const padZeros = (num) => {
   return num < 10 ? "0" + num : "" + num;
 };
-
-const $ = e => document.querySelector(e);
 
 const clockSize = 280,
 byFives = false;
@@ -203,4 +216,14 @@ const handleClockMousemove = (ev) => {
 
 // Events
 $("#js-clock").addEventListener('mousemove', handleClockMousemove)
+$$(".nav-header a").map(a => a.addEventListener("click", e => {
+  e.preventDefault();
+  const path = e.target.href;
+  history.pushState({path}, "", path);
+  router(path);
+}))
 }());
+window.onpopstate = function(e) {
+  console.log(e);
+  router(e);
+}

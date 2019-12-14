@@ -1,0 +1,35 @@
+.nav-header {
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  font-size: 1em;
+  height: 60px;
+  padding: 0 4px;
+  display: flex;
+  justify-content: center;
+  -ms-align-items: center;
+  align-items: center;
+  border-bottom: 4px solid transparent;
+}
+
+a.link-active {
+  color: var(--color1);
+  border-color: var(--color1);
+}
+
+@media (max-width: 768px) {
+  .nav-header {
+    width: 100%;
+  }
+
+  a {
+    height: 40px;
+  }
+}

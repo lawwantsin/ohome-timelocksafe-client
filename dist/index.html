@@ -7,7 +7,15 @@
   </head>
   <body>
     <div class=spotbg></div>
-    <div class="edit">
+    <div class=nav-header>
+      <a href=/setup>Setup</a>
+      <a href=/add>Add</a>
+      <a href=/diag>Diag</a>
+      <a href=/logs>Logs</a>
+    </div>
+    <!-- Add Alarm Page -->
+
+<div class="add page">
   <h1>Set Alarm</h1>
   <h2>I want to UNLOCK the box</h2>
   <!-- {FN ? sometime : ""} -->
@@ -44,9 +52,10 @@
   <div class="digital-time">
     <span class="hour"></span>:<span class="min"></span>
   </div>
-  <post-button onClick={() => this.submitPayload()}>Save</post-button>
 </div>
-<div class="diag">
+<!-- Diag Page -->
+
+<div class="diag page">
   <h1>Diagnostics</h1>
   <div class="inner">
     <div class="row">
@@ -93,7 +102,9 @@
     </div>
   </div>
 </div>
-<div id=setup class=page>
+<!-- Setup Page -->
+
+<div class="setup page">
   <div class=clock-face id=js-clock>
     <div class=hour3 hour>3</div>
     <div class=hour6 hour>6</div>
