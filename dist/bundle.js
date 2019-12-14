@@ -149,11 +149,11 @@ const router = e => {
   const path = (history.state && history.state.path) || e
   console.log(path, history.state, e);
   $('body').classList.remove("add", "setup", "list", "logs", "diag")
-  if (path.match(/add/)) $('body').classList.add("add")
   if (path.match(/setup/)) $('body').classList.add("setup")
-  if (path.match(/list/)) $('body').classList.add("list")
-  if (path.match(/logs/)) $('body').classList.add("logs")
-  if (path.match(/diag/)) $('body').classList.add("diag")
+  else if (path.match(/list/)) $('body').classList.add("list")
+  else if (path.match(/logs/)) $('body').classList.add("logs")
+  else if (path.match(/diag/)) $('body').classList.add("diag")
+  else $('body').classList.add("add")
 }
 
 (function() {
@@ -222,6 +222,9 @@ $$(".nav-header a").map(a => a.addEventListener("click", e => {
   history.pushState({path}, "", path);
   router(path);
 }))
+
+router(location.pathname);
+
 }());
 window.onpopstate = function(e) {
   console.log(e);

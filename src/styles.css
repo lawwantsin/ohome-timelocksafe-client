@@ -29,8 +29,7 @@ h1 {
   background: #333;
 }
 
-.page {
-  max-width: 430px;
+body > .page {
   margin: 20px auto;
   display: none;
 }

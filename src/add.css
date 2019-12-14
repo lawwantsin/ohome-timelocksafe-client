@@ -181,7 +181,7 @@
 }
 
 .add {
-  width: 920px;
+  max-width: 920px;
   margin: 0 auto;
 }
 
@@ -427,5 +427,131 @@
   height: 420px;
   display: flex;
   align-items: flex-start;
+  justify-content: center;
+}
+
+.form-wizard {
+  display: block;
+  width: inherit;
+  padding: 8px 0 0 0;
+  overflow-x: hidden;
+}
+
+.slider {
+  width: 100000px;
+  position: relative;
+  transition: transform 300ms;
+}
+
+.slider > .page {
+  float: left;
+  width: 100vw;
+}
+
+@media (min-width: 768px) {
+  .slider {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .slider > .page {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.page_0 .slider {
+  transform: translateX(0)
+}
+
+.page_1 .slider {
+  transform: translateX(-100vw)
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 0px;
+  padding: 0 4px 16px 4px;
+}
+
+@media (min-width: 768px) {
+  .buttons {
+    display: none;
+  }
+}
+
+.wizard-button {
+  font-size: 18px;
+  box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.2), inset 0 0 5px #999;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  text-decoration: none;
+  letter-spacing: 1px;
+  cursor: pointer;
+  color: #fff;
+  padding: 8px 0;
+  outline: none;
+}
+
+.days {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+.time {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.wizard-button.active {
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6), inset -2px -2px 5px #0000ff;
+}
+
+.highlighted {
+  background: var(--color1);
+  box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.2), inset 0 0 5px var(--color2);
+}
+
+.number-pad {
+  padding: 20px 0px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 22px;
+  width: 330px;
+}
+
+.number-pad .button {
+  border-radius: 6px;
+  border: none;
+  padding: 12px 8px;
+  font-size: 26px;
+  text-align: center;
+  cursor: pointer;
+  background-color: white;
+  box-shadow: inset 0 0 15px #444, 1px 3px 6px rgba(0, 0, 0, 0.6);
+}
+
+.number-pad .button:hover {
+  background-color: #ccc;
+}
+
+.number-pad .button:active {
+  box-shadow: inset 0 0 15px #444, 1px 1px 1px rgba(0, 0, 0, 0.6);
+}
+
+.back img,
+.close img {
+  height: 26px;
+}
+
+.back,
+.close {
+  display: flex;
+  align-items: center;
   justify-content: center;
 }
