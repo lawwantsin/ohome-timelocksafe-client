@@ -24,5 +24,8 @@ html=$( find . -maxdepth 2 -path '*src*' -iname '*.html' -not -name 'template.ht
 
 render_template src/template.html > dist/index.html
 
-echo Built!
+echo "Building... Success!  ./dist folder rebuilt!"
+echo "Ctrl+C to Quit"
+echo "Watching..."
+echo
 # Build system. Shipped.
