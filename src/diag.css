@@ -19,12 +19,12 @@
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
-.diag > .row {
+.diag .row {
   display: grid;
   grid-template-columns: 35% 65%;
 }
 
-.diag > .row .col:first-of-type {
+.diag .row .col:first-of-type {
   background: #aaa;
   text-align: right;
   border-top-left-radius: 8px;

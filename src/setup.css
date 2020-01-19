@@ -1,0 +1,63 @@
+.setup {
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 0 8px;
+}
+
+.setup > h1 {
+  color: white;
+  font-weight: 100;
+  font-size: 35px;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.setup > h2 {
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  font-weight: 100;
+  margin: 20px 0 10px 0;
+}
+
+.setup > .buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 32px;
+}
+
+.setup > .spacer {
+  height: 20px;
+}
+
+.setup > .topInfo {
+  min-height: 74px;
+}
+
+.setup > .selectCont {
+  max-width: 420px;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: column;
+  -ms-align-items: space-between;
+  align-items: space-between;
+  border-left: 12px solid var(--color1);
+  border-right: 12px solid var(--color1);
+  border-radius: 6px;
+  box-shadow: 1px 2px 6px #222;
+}
+
+.selectInput {
+  box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  padding: 10px;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  z-index: 1;
+  background-color: white;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}

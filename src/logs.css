@@ -1,18 +1,26 @@
 .logs {
   margin-bottom: 60px;
+  padding: 0 10px;
+}
+
+.logs > h1 {
+  font-weight: 100;
+  text-align: center;
+  color: white;
+  margin-top: 60px;
 }
 
 .logs > .inner {
   border-radius: 8px;
   background: #eee;
-  max-width: 640px;
+  max-width: 1240px;
   margin: 0 auto;
   color: #444;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
-.scrollable {
-  max-width: 600px;
-  margin: 20px;
+.logs pre {
+  max-width: 1200px;
+  padding: 40px;
   overflow: auto;
 }

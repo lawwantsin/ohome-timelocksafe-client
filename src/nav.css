@@ -6,7 +6,7 @@
   margin: 0 auto;
 }
 
-a {
+.nav-header > a {
   color: white;
   text-decoration: none;
   font-size: 1em;
@@ -19,7 +19,7 @@ a {
   border-bottom: 4px solid transparent;
 }
 
-a.link-active {
+.nav-header > a.link-active {
   color: var(--color1);
   border-color: var(--color1);
 }
@@ -29,7 +29,7 @@ a.link-active {
     width: 100%;
   }
 
-  a {
+  .nav-header > a {
     height: 40px;
   }
 }

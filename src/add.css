@@ -241,7 +241,7 @@
   transform: rotate(90deg);
 }
 
-.inner {
+.clock-face > .inner {
   background: white;
   position: relative;
   width: 84%;

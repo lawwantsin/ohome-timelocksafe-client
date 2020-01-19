@@ -1,6 +1,54 @@
 <!-- Setup Page -->
 
 <div class="setup page">
+  <h1>Setup</h1>
+  <p>Box Time: <span class="time"><!-- More info in main.js getBoxTime() --></span></p>
+  <h2>Current Time</h2>
+  <div class="digital-time">
+    <span class="hour"></span>:<span class="min"></span>
+  </div>
+  <div class="number-pad">
+    <button class="button _7">
+      7
+    </button>
+    <button class="button _8">
+      8
+    </button>
+    <button class="button _9">
+      9
+    </button>
+
+    <button class="button _4">
+      4
+    </button>
+    <button class="button _5">
+      5
+    </button>
+    <button class="button _6">
+      6
+    </button>
+
+    <button class="button _1">
+      1
+    </button>
+    <button class="button _2">
+      2
+    </button>
+    <button class="button _3">
+      3
+    </button>
+
+    <button class="button back">
+      <img src="/assets/images/backspace.svg" />
+    </button>
+    <button class="button _0">
+      0
+    </button>
+    <button class="button close">
+      <img src="/assets/images/times.svg" />
+    </button>
+  </div>
+  <radio-buttons class="hydrated"></radio-buttons>
   <div class="clock-face js-clock">
     <div class="hour3 hour">3</div>
     <div class="hour6 hour">6</div>
@@ -17,4 +65,9 @@
       <div class="hourHand"></div>
     </div>
   </div>
+  <div class="selectCont">
+      <select class="selectInput">
+        <!-- More info in main.js loadTimezones() -->
+      </select>
+    </div>
 </div>
