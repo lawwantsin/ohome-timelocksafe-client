@@ -4,7 +4,9 @@
   "description": "This software is built out of the least amount of code possible.  It's just html, css and javascript.  It uses no node modules.  The build system is 16 mines of code that merges all the files in the src folder and puts 3 finished files in the dist folder.",
   "main": "bs.js",
   "scripts": {
-    "start": "node devserver.js"
+    "build": "./build.sh",
+    "start": "./watch.sh",
+    "server": "node devserver.js"
   },
   "repository": {
     "type": "git",

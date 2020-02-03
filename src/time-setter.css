@@ -1,0 +1,33 @@
+.time-setter .top {
+  display: grid;
+  grid-template-columns: 1fr 136px 1fr;
+  grid-gap: 12px;
+  align-items: center;
+}
+
+.time-setter h2 {
+  color: white;
+  font-size: 1em;
+  text-align: left;
+  font-weight: 100;
+  margin: 0;
+}
+
+.time-setter._clock .number-pad {
+  display: none;
+}
+
+.time-setter._pad .clock-face {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .time-setter {
+    min-width: 0;
+  }
+
+  .time-setter .top {
+    grid-template-columns: 70px 130px 1fr;
+    grid-gap: 4px;
+  }
+}

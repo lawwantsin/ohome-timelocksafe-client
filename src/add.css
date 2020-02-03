@@ -1,38 +1,38 @@
-.dayOfWeek h2 {
+.add .dayOfWeek h2 {
   color: white;
   font-size: 1.3em;
   text-align: left;
   font-weight: 100;
 }
 
-.dayOfWeek hr {
+.add .dayOfWeek hr {
   background: #444;
   padding: 1px 0;
   border: none;
   margin: 48px 0;
 }
 
-.top {
+.add .top {
   height: 63px;
   display: flex;
   align-items: center;
 }
 
-.top h2 {
+.add .top h2 {
   margin: 0;
 }
 
 @media (min-width: 768px) {
-  .day-setter {
+  .add .day-setter {
     width: 100vw;
   }
 }
 
-.blue {
+.add .blue {
   font-weight: bold;
 }
 
-.days {
+.add .days {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 22px;
@@ -40,7 +40,7 @@
   margin-top: 20px;
 }
 
-.dayOfWeek {
+.add .dayOfWeek {
   width: 420px;
   margin: 0 auto;
   display: flex;
@@ -49,7 +49,7 @@
   justify-content: center;
 }
 
-.day {
+.add .day {
   font-size: 1.1em;
   box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.2), inset 0 0 5px #999;
   text-align: center;
@@ -69,41 +69,34 @@
   height: 60px;
 }
 
-.highlighted {
+.add .highlighted {
   background: var(--color1);
   box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.2), inset 0 0 5px var(--color2);
   color: white;
 }
 
-.everyXdays {
+.add .everyXdays {
   border: none;
   color: white;
   display: grid;
   grid-template-columns: 1fr 80px 1fr;
   align-items: center;
   grid-gap: 8px;
-
-  /* padding-top: 24px; */
 }
 
-.every {
+.add .every {
   text-align: right;
 }
 
-.digit-display {
+.add .digit-display {
   width: 100px;
 }
 
-.inputs {
-
-  /* min-height: 440px; */
-}
-
-.select span {
+.add .select span {
   margin: 0 8px;
 }
 
-.select {
+.add .select {
   font-size: 16px;
   border-radius: 6px;
   text-align: center;
@@ -352,32 +345,6 @@
   left: 50%;
 }
 
-.meridian {
-  font-size: 25px;
-  line-height: 25px;
-  border-radius: 6px;
-  box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.2), inset 0 0 3px #fff;
-  text-align: center;
-  display: inline;
-  user-select: none;
-  text-decoration: none;
-  letter-spacing: 2px;
-  cursor: pointer;
-  border: 1px solid #444;
-  color: #fff;
-  padding: 8px;
-  outline: none;
-  background: #444;
-
-  /* background: -moz-linear-gradient(top, #627d4d 0%, #1f3b08 100%);
-  background: -webkit-linear-gradient(top, #627d4d 0%, #1f3b08 100%);
-  background: linear-gradient(to bottom, #627d4d 0%, #1f3b08 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#627d4d', endColorstr='#1f3b08', GradientType=0); */
-  /* text-shadow: -1px -1px 2px #000, 0 2px 7px #222; */
-  font-weight: 600;
-  width: 60px;
-}
-
 .text-input input {
   text-align: center;
 }
@@ -472,16 +439,16 @@
 .buttons {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 0px;
+  grid-gap: 32px;
   padding: 0 4px 16px 4px;
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   .buttons {
     display: none;
   }
 }
-
+ */
 .wizard-button {
   font-size: 18px;
   box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.2), inset 0 0 5px #999;
@@ -589,4 +556,64 @@
 
 .post-button button:active {
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6), inset -2px -2px 5px #0000ff;
+}
+
+.digital-time {
+  background-color: rgba(0, 0, 0, 0.3);
+  user-select: none;
+  padding: 8px;
+  border-radius: 6px;
+  display: flex;
+  font-size: 38px;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: monospace;
+  cursor: pointer;
+  border: 4px solid #2c5cd6;
+}
+
+.digital-time:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.radio-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 63px;
+  grid-gap: 0;
+  width: 100%;
+}
+
+.radio-buttons .button {
+  font-size: 18px;
+  box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.2), inset 0 0 5px #999;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  text-decoration: none;
+  letter-spacing: 1px;
+  cursor: pointer;
+  color: #fff;
+  padding: 4px 0;
+  outline: none;
+  background: #444;
+  margin: 0;
+}
+
+.radio-buttons .button:first-of-type {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+.radio-buttons .button:last-of-type {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.radio-buttons .highlighted {
+  background: var(--color1);
+  box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.2), inset 0 0 5px var(--color2);
 }

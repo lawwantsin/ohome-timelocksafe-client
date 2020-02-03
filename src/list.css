@@ -1,0 +1,186 @@
+.list {
+  width: 640px;
+  margin: 0 auto;
+}
+
+.list .buttons {
+  display: flex;
+}
+
+.list .items {
+  list-style: none;
+}
+
+.list .item {
+  display: grid;
+  grid-template-columns: 35px 190px 1fr 40px;
+  grid-gap: 16px;
+  padding: 24px 12px;
+  background-color: #eee;
+  margin: 8px 0;
+  border-radius: 6px;
+  box-shadow: inset 0 0 15px #444, 1px 3px 6px rgba(0, 0, 0, 0.6);
+}
+
+.list .item-template {
+  display: none;
+}
+
+.list .noItems {
+  background-color: #eee;
+  margin: 16px 0;
+  padding: 40px 0px;
+  text-align: center;
+  font-size: 2em;
+  border-radius: 6px;
+  box-shadow: inset 0 0 15px #444, 1px 3px 6px rgba(0, 0, 0, 0.6);
+}
+
+.list .switch {
+  display: flex;
+  align-items: center;
+}
+
+.list .enable p {
+  margin: 0;
+}
+
+.list h1 {
+  color: white;
+  font-weight: 100;
+  font-size: 35px;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.list h2 {
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  font-weight: 100;
+  margin: 20px 0 10px 0;
+}
+
+.list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.list a {
+  text-decoration: none;
+}
+
+.list .time {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  font-size: 45px;
+  line-height: 55px;
+}
+
+.list .meridian {
+  color: #666;
+  padding: 0 5px;
+  margin: 0 5px;
+  font-size: 30px;
+  text-transform: uppercase;
+}
+
+.list .weekdays {
+  display: block;
+  font-size: 0.8em;
+  color: #999;
+}
+
+.list .weekdays .day {
+  border-radius: 3px;
+  display: inline-block;
+  padding: 6px 7px;
+  margin: 0 5px 3px 0;
+}
+
+.list .frequency {
+  font-size: 45px;
+  line-height: 55px;
+}
+
+.list .day.active {
+  border-color: #444;
+  background-color: #666;
+  color: #fff;
+}
+
+.list .list-buttons {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: column;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .list {
+    margin: 0 4px;
+  }
+
+  .time {
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 1.8em;
+  }
+
+  .list .frequency {
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  .list .meridian {
+    font-size: inherit;
+  }
+
+  .list .switch {
+    align-items: center;
+    grid-row: 1 / 3;
+  }
+
+  .list .item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 50px 120px 1fr;
+    grid-gap: 8px;
+    padding: 0px 12px;
+  }
+
+  .list .weekdays {
+    width: 198px;
+    height: 68px;
+    padding: 14px 0 0 0;
+  }
+
+  .list .day {
+    display: inline-block;
+    padding: 4px 8px;
+    margin: 0 2px 2px 0;
+    border-radius: 3px;
+  }
+
+  .list .buttons {
+    position: absolute;
+    right: 13px;
+    top: 12px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 4px;
+  }
+}
+
+.someItems, .noItems {
+  display: none;
+}
+
+.renderList.some .someItems {
+  display: block;
+}
+
+.renderList.none .noItems {
+  display: block;
+}

@@ -1,0 +1,40 @@
+.icon-button {
+  padding: 4px;
+  border-radius: 6px;
+  box-shadow: 0 0 3px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  height: 24px;
+  width: 24px;
+  cursor: pointer;
+}
+
+.icon-button:hover {
+  border-color: #555;
+}
+
+.icon-button:hover svg {
+  color: #333;
+}
+
+.icon-button:active {
+  box-shadow: inset 1px 1px 3px rgba(0,0,0,0.6);
+}
+
+.icon-button:active svg {
+  margin-top: 2px;
+  margin-left: 2px;
+}
+
+@media (max-width: 768px) {
+  .icon-button {
+    height: 16px;
+    width: 16px;
+  }
+  svg {
+    height: 16px;
+    width: 16px;
+  }
+}

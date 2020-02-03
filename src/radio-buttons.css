@@ -1,0 +1,40 @@
+.radio-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 63px;
+  grid-gap: 0;
+  width: 100%;
+}
+
+.radio-buttons .button {
+  font-size: 18px;
+  box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.2), inset 0 0 5px #999;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  text-decoration: none;
+  letter-spacing: 1px;
+  cursor: pointer;
+  color: #fff;
+  padding: 4px 0;
+  outline: none;
+  background: #444;
+  margin: 0;
+}
+
+.radio-buttons .button:first-of-type {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+.radio-buttons .button:last-of-type {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.radio-buttons ._highlighted {
+  background: var(--color1);
+  box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.2), inset 0 0 5px var(--color2);
+}
