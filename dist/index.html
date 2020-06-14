@@ -3,209 +3,42 @@
   <head>
     <meta charset=utf-8>
     <title>oHome.io Alarm Clock</title>
-    <link rel=stylesheet href=bundle.css>
+    <link rel=stylesheet href=/bundle.css>
   </head>
   <body>
     <div class=spotbg></div>
     <div class=nav-header>
-      <a href=/setup>Setup</a>
+      <a href=/>Setup</a>
       <a href=/add>Add</a>
       <a href=/list>List</a>
       <a href=/diag>Diag</a>
       <a href=/logs>Logs</a>
     </div>
-    <div class="list page">
-  <h2>Box Time: <span class="currentTime"></span></h2>
-  <div class="post-button">
-    <button class="js-add-new">Add New Alarm</button>
-  </div>
-  <div class="renderList">
-    <div class="someItems">
-      <h2>The Box will UNLOCK at these times.</h2>
-      <ul class="items">
-        <!-- #item-templates rendered here -->
-      </ul>
-    </div>
-    <div class="noItems">No Alarms Set</div>
-  </div>
-  <div class="post-button">
-    <button>Open Box Now</button>
-  </div>
-</div>
-
-<template id="item-template">
-  <div class="toggle-switch vertical _off">
-    <div class="switch"></div>
-  </div>
-  <div class="time">
-    <span class="hour"></span>
-    <span class="colon">:</span>
-    <span class="minutes"></span>
-    <span class="meridian"></span>
-  </div>
-  <div class="weekdays">
-    <div class="day _0">Monday</div>
-    <div class="day _1">Tuesday</div>
-    <div class="day _2">Wednesday</div>
-    <div class="day _3">Thursday</div>
-    <div class="day _4">Friday</div>
-    <div class="day _5">Saturday</div>
-    <div class="day _6">Sunday</div>
-  </div>
-  <div class="list-buttons">
-    <div class="remove-button icon-button">
-      <svg viewBox="0 0 448 512">
-        <path
-          fill="currentColor"
-          d="M268 416h24a12 12 0 0 0 12-12V188a12 12 0 0 0-12-12h-24a12 12 0 0 0-12 12v216a12 12 0 0 0 12 12zM432 80h-82.41l-34-56.7A48 48 0 0 0 274.41 0H173.59a48 48 0 0 0-41.16 23.3L98.41 80H16A16 16 0 0 0 0 96v16a16 16 0 0 0 16 16h16v336a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128h16a16 16 0 0 0 16-16V96a16 16 0 0 0-16-16zM171.84 50.91A6 6 0 0 1 177 48h94a6 6 0 0 1 5.15 2.91L293.61 80H154.39zM368 464H80V128h288zm-212-48h24a12 12 0 0 0 12-12V188a12 12 0 0 0-12-12h-24a12 12 0 0 0-12 12v216a12 12 0 0 0 12 12z"
-        ></path>
-      </svg>
-    </div>
-  </div>
-</template>
-<!-- Add Alarm Page -->
-
-<div class="add page">
-  <h1>Set Alarm</h1>
-  <h2>I want to UNLOCK the box</h2>
-  <div class="hidden">
-    <div class="form-wizard">
-      <div class="buttons">
-        <div class="wizard-button days">Days</div>
-        <div class="wizard-button time">Time</div>
-      </div>
-      <div class="slider">
-        <div class="page">
-          <div class=dayOfWeek>
-            <div class=top>
-              <h2>On <span class=dpDow></span> of the week.</h2>
-            </div>
-            <div class=days>
-              <div class=select>
-                Select <span class=all>All</span><span class=none>None</span>
-              </div>
-              <div class=day _0>Mondays</div>
-              <div class=day _1>Tuesday</div>
-              <div class=day _2>Wednesd</div>
-              <div class=day _3>Thursda</div>
-              <div class=day _4>Fridays</div>
-              <div class=day _5>Saturda</div>
-              <div class=day _6>Sundays</div>
-            </div>
-          </div>
-        </div>
-          <div class="page">
-            <div class="time-setter">
-            <div class=clock-face id=js-clock>
-              <div class="hour3 hour">3</div>
-              <div class="hour6 hour">6</div>
-              <div class="hour9 hour">9</div>
-              <div class="hour12 hour">12</div>
-
-              <div class="marker oneseven"></div>
-              <div class="marker twoeight"></div>
-              <div class="marker fourten"></div>
-              <div class="marker fiveeleven"></div>
-              <div class=inner>
-                <div class=center></div>
-                <div class=minuteHand></div>
-                <div class=hourHand></div>
-              </div>
-            </div>
-            <div class="digital-time">
-              <span class="hour"></span>:<span class="min"></span>
-            </div>
-            <div class="number-pad">
-              <button class="button _7">7</button>
-              <button class="button _8">8</button>
-              <button class="button _9">9</button>
-
-              <button class="button _4">4</button>
-              <button class="button _5">5</button>
-              <button class="button _6">6</button>
-
-              <button class="button _1">1</button>
-              <button class="button _2">2</button>
-              <button class="button _3">3</button>
-
-              <button class="button back">
-                <img src="/images/backspace.svg" />
-              </button>
-              <button class="button _0">0</button>
-              <button class="button close">
-                <img src="/images/times.svg" />
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Diag Page -->
-
-<div class="diag page">
-  <h1>Diagnostics</h1>
-  <div class="inner">
-    <div class="row">
-      <div class="col">Current UTC time</div>
-      <div class="col current_time_utc"></div>
-    </div>
-    <div class="row">
-      <div class="col">Current Local time</div>
-      <div class="col current_time_local"></div>
-    </div>
-    <div class="row">
-      <div class="col">CPU Tempurature</div>
-      <div class="col"><span class="hw_temp"></span>&deg; F</div>
-    </div>
-    <div class="row">
-      <div class="col">State Names</div>
-      <div class="col state_name"></div>
-    </div>
-    <div class="row">
-      <div class="col">Next State Time</div>
-      <div class="col next_state_time"></div>
-    </div>
-    <div class="row">
-      <div class="col">Timezone</div>
-      <div class="col timezone"></div>
-    </div>
-    <div class="row">
-      <div class="col">Server Uptime</div>
-      <div class="col">
-        <span class="up0"></span> hours <span class="up1"></span> minutes <span class="up2"></span> seconds.
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">Alarm Data</div>
-      <div class="col alarms">
-        <ol class="alarms-list"><!-- LIST --></ol>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">Software Versions</div>
-      <div class="col">
-        <ul class="version"><!-- VERSIONS --></ul>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Logs Page -->
-
-<div class="logs page">
-  <h1>Logs</h1>
-  <div class="inner">
-    <div class="scrollable">
-      <pre></pre>
-    </div>
-  </div>
-</div>
-<!-- Setup Page -->
+    <!-- Setup Page -->
 
 <div class="setup page">
   <h1>Setup</h1>
-  <h2>Box Time: <span class="time"><!-- More info in main.js getBoxTime() --></span></h2>
+  <h2>Box Time: <span class="boxTime"><!-- More info in main.js getTime() --></span></h2>
+  <h2>Your Time: <span class="clientTime"><!-- More info in main.js getTime() --></span></h2>
+  <div class="actionPanel _unset js-is-current-time-correct">
+    <h2>Is this the Current Time and Timezone?</h2>
+    <div class="buttons">
+      <div class="post-button">
+        <button data-value="1">Yes</button>
+      </div>
+      <div class="post-button">
+        <button data-value="0">No</button>
+      </div>
+    </div>
+  </div>
+  <div class="actionPanel _set">
+    <h2>Please Set Your Time to Begin</h2>
+    <div class="saveButton">
+      <div class="post-button">
+        <button>Save</button>
+      </div>
+    </div>
+  </div>
   <div class="spacer"></div>
   <div class="time-setter _clock">
     <div class="top">
@@ -214,8 +47,8 @@
         <span class="hour"></span>:<span class="min"></span>
       </div>
       <div class="radio-buttons">
-        <div class="button _highlighted">AM</div>
-        <div class="button ">PM</div>
+        <div class="button js-am" data-id="AM">AM</div>
+        <div class="button js-pm" data-id="PM">PM</div>
       </div>
     </div>
     <div class="number-pad">
@@ -240,7 +73,7 @@
       </button>
     </div>
     <radio-buttons class="hydrated"></radio-buttons>
-    <div class="clock-face js-clock">
+    <div class="clock-face js-clock" data-id="add">
       <div class="hour3 hour">3</div>
       <div class="hour6 hour">6</div>
       <div class="hour9 hour">9</div>
@@ -258,32 +91,13 @@
     </div>
   </div>
   <h2>Timezone (city may vary)</h2>
-  <div class="selectCont">
+  <div class="selectCont js-time-zones">
     <select class="selectInput">
-      <!-- More info in main.js loadTimezones() -->
+      <!-- More info in loadTimezones() -->
     </select>
   </div>
   <div class="spacer"></div>
-  <div class="botButtons _unset">
-    <h2>Is this the Current Time and Timezone?</h2>
-    <div class="buttons">
-      <div class="post-button">
-        <button>Yes</button>
-      </div>
-      <div class="post-button">
-        <button>No</button>
-      </div>
-    </div>
-  </div>
-  <div class="botButtons _set">
-    <h2>Please Set Your Time to Begin</h2>
-    <div class="saveButton">
-      <div class="post-button">
-        <button>Save</button>
-      </div>
-    </div>
-  </div>
 </div>
-    <script type=module src=bundle.js></script>
+    <script type=module src=/bundle.js></script>
   </body>
 </html>

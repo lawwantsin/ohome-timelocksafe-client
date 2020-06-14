@@ -61,3 +61,22 @@
   appearance: none;
   cursor: pointer;
 }
+
+.actionPanel {
+  background: rgba(255,255,255,0.1);
+  padding: 20px;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+.actionPanel > h2 {
+  margin: 0 0 10px 0;
+}
+
+.isCurrent ._set, .isNotCurrent ._unset {
+  display: none;
+}
+
+.isCurrent ._unset, .isNotCurrent ._set {
+  display: block;
+}

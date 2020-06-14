@@ -13,10 +13,10 @@ const loadList = async () => {
 
 const update = (alarms) => {
   STATE.alarms = alarms;
-  render();
+  renderList();
 }
 
-const render = () => {
+const renderList = () => {
   const alarms = STATE.alarms;
   const r = $('.renderList');
   r.innerHTML = "";
@@ -30,10 +30,12 @@ const render = () => {
   }
   // Yes alarms
   rc.add('some');
+  console.log(alarms);
   alarms.map((item, i) => {
     var li = document.createElement('li');
     li.innerHTML = $('#item-template').innerHTML;
     li.classList.add("item");
+    li.setAttribute('data-id', item.id);
     const a = r.appendChild(li);
     const z = Utils.padZeros;
     item.meridian = "AM"
@@ -59,24 +61,25 @@ const removeAlarm = async (id) => {
   const response = await Utils.get("delete.json", { delaid: id });
   const json = await response.json();
   if (response.ok) {
-    alarms = alarms
+    STORE.alarms = alarms
       .filter(a => {
         return a.id !== id;
       })
       .sort(asc);
+      renderList();
   } else {
     serverMsg = json.message;
   }
 };
 
-const toggle = async (toggledAlarm) => {
+const toggle = async (id) => {
   const response = await Utils.get("toggle.json", {
-    toggleaid: toggledAlarm.id
+    toggleaid: id
   });
   const json = await response.json();
   if (response.ok) {
     const otherAlarms = alarms.filter(a => {
-      return toggledAlarm.id !== a.id;
+      return id !== a.id;
     });
     toggledAlarm.enabled = !toggledAlarm.enabled;
     alarms = [...otherAlarms, toggledAlarm].sort(asc);
@@ -87,10 +90,33 @@ const toggle = async (toggledAlarm) => {
 
 const openNow = async () => {
   const response = await Utils.get("unlock.json");
-  const data = await response.json();
-  if (response.ok) {
-    //
-  } else {
-    serverMsg = data.message;
+  console.log(response);
+  if (response.message != 'Unlocked Successfully') {
+    serverMsg = response.message;
   }
 };
+
+const handleListClick = event => {
+  const target = event.target;
+  const classes = Array.from(target.classList)
+  console.log(classes)
+  if (classes.includes('js-toggle')) {
+    const id = target.closest(".item").getAttribute("data-id")
+    toggle(id)
+  }
+  if (classes.includes('js-remove')) {
+    const id = target.closest(".item").getAttribute("data-id")
+    removeAlarm(id)
+  }
+}
+
+window.addEventListener('DOMContentLoaded', function() {
+  const list = $('.list')
+  if (list) {
+    loadList()
+    list.addEventListener("click", e => handleListClick(e))
+  }
+  const openBox = $(".js-open-box button")
+  if (openBox)
+    openBox.addEventListener('click', () => openNow());
+});

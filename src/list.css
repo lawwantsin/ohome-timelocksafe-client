@@ -1,5 +1,5 @@
 .list {
-  width: 640px;
+  max-width: 640px;
   margin: 0 auto;
 }
 
@@ -26,6 +26,10 @@
   display: none;
 }
 
+.list .remove-button svg, .list .remove-button path {
+  pointer-events: none;
+}
+
 .list .noItems {
   background-color: #eee;
   margin: 16px 0;
@@ -39,6 +43,7 @@
 .list .switch {
   display: flex;
   align-items: center;
+  pointer-events: none;
 }
 
 .list .enable p {

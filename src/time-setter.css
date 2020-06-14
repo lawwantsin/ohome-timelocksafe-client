@@ -3,6 +3,7 @@
   grid-template-columns: 1fr 136px 1fr;
   grid-gap: 12px;
   align-items: center;
+  width: 350px;
 }
 
 .time-setter h2 {

@@ -30,7 +30,6 @@ h1 {
 
 body > .page {
   margin: 20px auto;
-  display: none;
 }
 
 body.add .page.add,

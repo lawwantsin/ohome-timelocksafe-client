@@ -2,7 +2,27 @@
 
 <div class="setup page">
   <h1>Setup</h1>
-  <h2>Box Time: <span class="time"><!-- More info in main.js getBoxTime() --></span></h2>
+  <h2>Box Time: <span class="boxTime"><!-- More info in main.js getTime() --></span></h2>
+  <h2>Your Time: <span class="clientTime"><!-- More info in main.js getTime() --></span></h2>
+  <div class="actionPanel _unset js-is-current-time-correct">
+    <h2>Is this the Current Time and Timezone?</h2>
+    <div class="buttons">
+      <div class="post-button">
+        <button data-value="1">Yes</button>
+      </div>
+      <div class="post-button">
+        <button data-value="0">No</button>
+      </div>
+    </div>
+  </div>
+  <div class="actionPanel _set">
+    <h2>Please Set Your Time to Begin</h2>
+    <div class="saveButton">
+      <div class="post-button">
+        <button>Save</button>
+      </div>
+    </div>
+  </div>
   <div class="spacer"></div>
   <div class="time-setter _clock">
     <div class="top">
@@ -11,8 +31,8 @@
         <span class="hour"></span>:<span class="min"></span>
       </div>
       <div class="radio-buttons">
-        <div class="button _highlighted">AM</div>
-        <div class="button ">PM</div>
+        <div class="button js-am" data-id="AM">AM</div>
+        <div class="button js-pm" data-id="PM">PM</div>
       </div>
     </div>
     <div class="number-pad">
@@ -37,7 +57,7 @@
       </button>
     </div>
     <radio-buttons class="hydrated"></radio-buttons>
-    <div class="clock-face js-clock">
+    <div class="clock-face js-clock" data-id="add">
       <div class="hour3 hour">3</div>
       <div class="hour6 hour">6</div>
       <div class="hour9 hour">9</div>
@@ -55,29 +75,10 @@
     </div>
   </div>
   <h2>Timezone (city may vary)</h2>
-  <div class="selectCont">
+  <div class="selectCont js-time-zones">
     <select class="selectInput">
-      <!-- More info in main.js loadTimezones() -->
+      <!-- More info in loadTimezones() -->
     </select>
   </div>
   <div class="spacer"></div>
-  <div class="botButtons _unset">
-    <h2>Is this the Current Time and Timezone?</h2>
-    <div class="buttons">
-      <div class="post-button">
-        <button>Yes</button>
-      </div>
-      <div class="post-button">
-        <button>No</button>
-      </div>
-    </div>
-  </div>
-  <div class="botButtons _set">
-    <h2>Please Set Your Time to Begin</h2>
-    <div class="saveButton">
-      <div class="post-button">
-        <button>Save</button>
-      </div>
-    </div>
-  </div>
 </div>

@@ -7,6 +7,16 @@ const tu = (T) => {
   return typeof T !== "undefined";
 };
 
+const h = input => {
+  if (!tu(input)) return '';
+  return input
+}
+
+const pretty = time => {
+  const output = `${h(time.hour)}:${Utils.padZeros(h(time.minute))}:${Utils.padZeros(h(time.second))} ${h(time.meridian)}`
+  return output
+}
+
 // Utilities that all files use.
 const Utils = {
   padZeros: (num) => {
@@ -69,8 +79,6 @@ const Utils = {
 const BOX_SERVER = "http://172.16.0.1/";
 const SERVER = BOX_SERVER;
 
-const AM = 0;
-const PM = 1;
 const NONE = 0;
 const DOW = 1;
 const FREQ = 2;
